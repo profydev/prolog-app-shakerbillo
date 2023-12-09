@@ -85,6 +85,9 @@ describe("Sidebar Navigation", () => {
       // Support button should be rendered but Collapse button not
       cy.get("nav").contains("Support").should("exist");
       cy.get("nav").contains("Collapse").should("not.be.visible");
+      cy.get("button.button_button__gOfHp.menu-item-link_anchor__19zPb", {
+        timeout: 10000,
+      }).should("not.be.visible");
 
       // close mobile navigation and check that it disappears
       cy.get("img[alt='close menu']").click();
