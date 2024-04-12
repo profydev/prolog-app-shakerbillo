@@ -42,6 +42,11 @@ describe("Sidebar Navigation", () => {
       // check that text is not rendered
       cy.get("nav").contains("Issues").should("not.exist");
     });
+
+    it("Support button should open the user’s mail app", () => {
+      // collapse navigation
+      cy.get("nav").contains("Support").click();
+    });
   });
 
   context("mobile resolution", () => {
