@@ -1,11 +1,11 @@
+import { Routes } from "@config/routes";
+import { Button } from "@features/ui";
+import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
-import { Routes } from "@config/routes";
-import classNames from "classnames";
-import { NavigationContext } from "./navigation-context";
 import { MenuItemButton } from "./menu-item-button";
 import { MenuItemLink } from "./menu-item-link";
-import { Button } from "@features/ui";
+import { NavigationContext } from "./navigation-context";
 import styles from "./sidebar-navigation.module.scss";
 
 const menuItems = [
@@ -84,7 +84,12 @@ export function SidebarNavigation() {
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
-              onClick={() => alert("Support")}
+              onClick={() => {
+                const email = "support@prolog-app.com";
+                const subject = encodeURIComponent("Support Request:");
+                const mailtoLink = `mailto:${email}?subject=${subject}`;
+                window.open(mailtoLink);
+              }}
             />
 
             <MenuItemButton
