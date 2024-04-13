@@ -29,7 +29,6 @@ export function SidebarNavigation() {
       setInMobileView(window.innerWidth < 768);
     };
 
-    // Set the initial state based on the client's window size
     handleResize();
 
     window.addEventListener("resize", handleResize);
@@ -54,11 +53,6 @@ export function SidebarNavigation() {
         <header className={styles.header}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            // src={
-            //   isSidebarCollapsed
-            //     ? "/icons/logo-small.svg"
-            //     : "/icons/logo-large.svg"
-            // }
             src={
               inMobileView
                 ? "/icons/logo-large.svg"
