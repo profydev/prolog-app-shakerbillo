@@ -18,17 +18,16 @@ function mapApiStatusToEnum(status: string): ProjectStatus {
 }
 
 export async function getProjects(): Promise<Project[]> {
-  const { data } =
-    await axios.get<
-      {
-        id: string;
-        name: string;
-        language: ProjectLanguage;
-        numIssues: number;
-        numEvents24h: number;
-        status: string;
-      }[]
-    >(ENDPOINT);
+  const { data } = await axios.get<
+    {
+      id: string;
+      name: string;
+      language: ProjectLanguage;
+      numIssues: number;
+      numEvents24h: number;
+      status: string;
+    }[]
+  >(ENDPOINT);
 
   return data.map((project) => ({
     ...project,
