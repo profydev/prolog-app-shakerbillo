@@ -1,4 +1,5 @@
-import capitalize from "lodash/capitalize";
+// import { ProjectLanguage } from "@api/projects.types";
+// import capitalize from "lodash/capitalize";
 import mockProjects from "../fixtures/projects.json";
 
 describe("Project List", () => {
@@ -32,7 +33,19 @@ describe("Project List", () => {
           cy.wrap($el).contains(languageNames[index]);
           cy.wrap($el).contains(mockProjects[index].numIssues);
           cy.wrap($el).contains(mockProjects[index].numEvents24h);
-          cy.wrap($el).contains(capitalize(mockProjects[index].status));
+
+          const statusToCheck =
+            mockProjects[index].status === "error"
+              ? "Critical"
+              : mockProjects[index].status === "info"
+                ? "Stable"
+                : "Warning";
+          cy.wrap($el).contains(statusToCheck);
+
+          cy.wrap($el)
+            .invoke("text")
+            .then((text) => console.log(text));
+
           cy.wrap($el)
             .find("a")
             .should("have.attr", "href", "/dashboard/issues");
