@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { PageFooter } from "../page-footer";
 import { SidebarNavigation } from "../sidebar-navigation";
 import styles from "./page-container.module.scss";
 
@@ -26,6 +27,7 @@ export function PageContainer({ children, title, info }: PageContainerProps) {
           <div className={styles.info}>{info}</div>
           {children}
         </div>
+        <PageFooter />
       </main>
     </div>
   );
