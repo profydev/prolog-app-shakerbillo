@@ -7,12 +7,12 @@ export const PageFooter = () => {
       <footer className={styles.siteFooter}>
         <div className={styles.footerContent}>
           <p className={styles.footVersion}>{`Version: ${version}`}</p>
-          <nav className={styles.footerLinks}>
+          <span className={styles.footerLinks}>
             <a href="#">Docs</a>
             <a href="#">API</a>
             <a href="#">Help</a>
             <a href="#">Community</a>
-          </nav>
+          </span>
 
           <span className={styles.logoWrap}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
