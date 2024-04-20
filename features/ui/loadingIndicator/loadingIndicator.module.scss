@@ -1,0 +1,57 @@
+@use "@styles/color";
+@use "@styles/space";
+@use "@styles/breakpoint";
+@use "@styles/z-index";
+@use "@styles/misc";
+
+.container {
+  display: flex;
+  width: 1160px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loadingCircle {
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  aspect-ratio: 1;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: breakpoint.$mobile) {
+  .container {
+    display: flex;
+    width: 349px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .loadingCircle {
+    width: 64px;
+    height: 64px;
+  }
+}
