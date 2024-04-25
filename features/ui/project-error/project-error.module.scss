@@ -1,0 +1,157 @@
+@use "@styles/color";
+@use "@styles/space";
+@use "@styles/breakpoint";
+@use "@styles/z-index";
+@use "@styles/misc";
+
+$error-color: var(--error-700, #b42318);
+$error-background: var(--error-25, #fffbfa);
+$error-border-color: var(--error-300, #fda29b);
+
+.errorAlert {
+  display: flex;
+  width: fixed 1112px;
+  height: auto 52px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid $error-border-color;
+  background: $error-background;
+}
+
+.alertCircle {
+  width: fixed 20px;
+  height: fixed 20px;
+  flex-shrink: 0;
+  color: $error-color;
+}
+
+.content {
+  width: 100% 1048px;
+  height: auto 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 0 0;
+  color: $error-color;
+}
+
+.textSupport {
+  display: flex;
+  width: 100% 945px;
+  height: auto 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+  align-self: stretch;
+  color: $error-color;
+
+  /* Text sm/Medium */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.action {
+  width: auto 91px;
+  height: auto 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: $error-color;
+}
+
+.buttonContainer {
+  width: auto 91px;
+  height: auto 20px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 8px;
+  color: $error-color;
+}
+
+.buttonBase {
+  width: auto 91px;
+  height: auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttonText {
+  width: auto 63px;
+  height: auto 20px;
+  color: $error-color;
+
+  /* Text sm/Medium */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.arrowRight {
+  width: fixed 20px;
+  height: fixed 20px;
+  color: $error-color;
+}
+
+@media (max-width: breakpoint.$mobile) {
+  .errorAlert {
+    width: 100% 351px;
+    height: auto 72px;
+  }
+
+  .alertCircle {
+    width: fixed 20px;
+    height: fixed 20px;
+  }
+
+  .content {
+    width: 100% 287px;
+    height: auto 40px;
+  }
+
+  .textSupport {
+    width: 184px;
+    height: 40px;
+  }
+
+  .action {
+    width: auto 91px;
+    height: auto 20px;
+  }
+
+  .buttonContainer {
+    width: auto 91px;
+    height: auto 20px;
+  }
+
+  .buttonBase {
+    width: auto 91px;
+    height: auto 20px;
+  }
+
+  .buttonText {
+    width: auto 63px;
+    height: auto 20px;
+  }
+
+  .arrowRight {
+    width: fixed 20px;
+    height: fixed 20px;
+  }
+}

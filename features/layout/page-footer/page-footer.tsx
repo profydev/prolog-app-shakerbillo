@@ -27,5 +27,3 @@ export const PageFooter = () => {
     </div>
   );
 };
-
-// export default PageFooter;

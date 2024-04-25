@@ -21,7 +21,7 @@ export const LoadingIndicator = () => {
           <span className={styles.content}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/icons/loading-circle.svg"
+              src="icons/loading-circle.svg"
               alt="spinner loader"
               className={styles.loadingCircle}
             />
