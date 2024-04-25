@@ -1,10 +1,11 @@
+import { ProjectError } from "../../../ui/project-error/project-error";
 import { LoadingIndicator } from "../../../ui/loadingIndicator/loadingIndicator";
 import { useGetProjects } from "../../api/use-get-projects";
 import { ProjectCard } from "../project-card";
 import styles from "./project-list.module.scss";
 
 export function ProjectList() {
-  const { data, isLoading, isError, error } = useGetProjects();
+  const { data, isLoading, isError, refetch } = useGetProjects();
 
   if (isLoading) {
     return (
@@ -15,8 +16,13 @@ export function ProjectList() {
   }
 
   if (isError) {
-    console.error(error);
-    return <div>Error: {error.message}</div>;
+    // console.error(error);
+    // return <div>Error: {error.message}</div>;
+    return (
+      <div>
+        <ProjectError onRetry={refetch} />
+      </div>
+    );
   }
 
   return (

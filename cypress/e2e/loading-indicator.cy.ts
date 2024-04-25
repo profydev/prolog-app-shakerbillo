@@ -1,12 +1,11 @@
 describe("Project List", () => {
   beforeEach(() => {
-    // Assuming your React app is served locally
     cy.visit("http://localhost:3000/dashboard");
   });
 
   context("desktop resolution", () => {
     beforeEach(() => {
-      cy.viewport(1025, 900); // Setting viewport for desktop resolution
+      cy.viewport(1025, 900);
     });
 
     it("Testing the loading spinner", () => {
